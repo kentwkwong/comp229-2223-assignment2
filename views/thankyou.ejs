@@ -1,0 +1,33 @@
+<!--
+    Filename: thankyou.ejs
+    Student name: Wing Keung Wong
+    Student ID: 301242732
+    Create Date: 7-Oct-2022
+-->
+
+
+<%- include('./partials/header.ejs') %>
+
+<%- include('./partials/main_nav.ejs') %>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="bg-light p-5 rounded-lg m-3">
+      <h1 class="display-4">Thank you for reaching us</h1>
+      <p class="lead">We will contact you shortly...</p>
+    </div>
+    <p>You will be redirected in 3 seconds</p>
+  </main>
+
+<%- include('./partials/bottom_nav.ejs') %>
+
+<%- include('./partials/footer.ejs') %>
+
+  <!-- Customized javascript to capture the name input -->
+  <script>
+    $(document).ready(function() {
+        var timer = setTimeout(function() {
+            window.location='/'
+        }, 3000);
+    });
+  </script>

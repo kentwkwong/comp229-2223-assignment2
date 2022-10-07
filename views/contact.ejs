@@ -1,0 +1,65 @@
+<!--
+    Filename: contact.ejs
+    Student name: Wing Keung Wong
+    Student ID: 301242732
+    Create Date: 7-Oct-2022
+-->
+
+<%- include('./partials/header.ejs') %>
+
+<%- include('./partials/main_nav.ejs') %>
+
+  <!-- Main Content -->
+  <main class="container bg-light p-5 rounded-lg m-3">
+    <h1 class="display-4">We'd love to hear from you!</h1> 
+    Email: wwong180@my.centennialcollege.ca
+    <br />
+    Mobile: +1(647)892-7389
+    <br />
+    <br />
+    <p class="lead">Or please feel free to use following form to let us know how you think.</p>
+    
+    
+    <hr class="my-4">
+    <p class="lead">
+        <!-- Form will be submitted to thankyou.ejs page -->
+        <form method="get" action="./thankyou" id="myForm">
+            <div class="row mb-3">
+                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputName">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputComment" class="col-sm-2 col-form-label">Comment</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="inputComment" rows="5" ></textarea>
+                </div>
+            </div>
+            <button type="button" id="btnSubmit" class="btn text-bg-info">Submit</button>
+        </form>
+    </p>
+  </main>
+
+<%- include('./partials/bottom_nav.ejs') %>
+
+<%- include('./partials/footer.ejs') %>
+  <!-- Customized javascript to capture the name input -->
+  <script>
+    $(document).ready(function() {
+        $("#btnSubmit").click(function(){
+            var name = $("#inputName").val();
+            if( !confirm(name + ', are you sure that you want to submit the form') ){
+                event.preventDefault();
+            } else {
+                $("#myForm").submit();
+            }
+        }); 
+    });
+  </script>

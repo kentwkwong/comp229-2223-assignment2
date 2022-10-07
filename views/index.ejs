@@ -1,0 +1,57 @@
+<!--
+    Filename: index.ejs
+    Student name: Wing Keung Wong
+    Student ID: 301242732
+    Create Date: 7-Oct-2022
+-->
+
+
+<%- include('./partials/header.ejs') %>
+
+<%- include('./partials/main_nav.ejs') %>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="bg-light p-5 rounded-lg m-3">
+      <h1 class="display-4">Welcome to the <%= title %> page</h1>
+      <p class="lead">
+        <h4>Mission: </h4>
+        Creating this assignment and hope Professor Sadit can give me a grade A or above 
+        <br />
+        So that my cumulative GPA will be boosted up for Co-Op term
+      </p>
+    </div>
+
+    <div class="container text-center border">
+      <div class="row">
+        <div class="col-12 text-bg-info">
+          You may click following link or the menu on the upper right hand corner to access different pages:
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <a class="nav-link" href="/about"><i class="fa-regular fa-circle-info"></i></i>About</a>
+        </div>
+        <div class="col">
+          <a class="nav-link" href="/projects"><i class="fa-regular fa-wrench"></i></i>Projects</a>
+        </div>
+        <div class="col">
+          <a class="nav-link" href="/services"><i class="fa-regular fa-gears"></i></i>Services</a>
+        </div>
+        <div class="col">
+          <a class="nav-link" href="/contact"><i class="fa-regular fa-address-card"></i>Contact</a>
+        </div>
+      </div>
+    </div>
+      
+
+  </main>
+
+
+<%- include('./partials/bottom_nav.ejs') %>
+
+<%- include('./partials/footer.ejs') %>

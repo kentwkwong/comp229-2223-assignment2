@@ -1,0 +1,57 @@
+<!--
+    Filename: main_nav.ejs
+    Student name: Wing Keung Wong
+    Student ID: 301242732
+    Create Date: 7-Oct-2022
+-->
+
+
+<body>
+    <!-- Main Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light text-bg-info">
+      <a class="navbar-brand" href="/"><img src='/Assets/images/kw_logo.png' />Comp229 Assignment 1</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+  
+          <li class="nav-item active">
+            <% if (title=="Home") { %>
+              <a class="nav-link active" href="/home"><i class="fa-regular fa-house"></i>Home </a>
+            <% } else { %>
+              <a class="nav-link" href="/home"><i class="fa-regular fa-house"></i>Home </a>
+            <% } %> 
+          </li>
+          <li class="nav-item">
+            <% if (title=="About") { %>
+              <a class="nav-link active" href="/about"><i class="fa-regular fa-circle-info"></i></i>About</a>
+            <% } else { %>
+              <a class="nav-link" href="/about"><i class="fa-regular fa-circle-info"></i></i>About</a>
+            <% } %> 
+          </li>
+          <li class="nav-item">
+            <% if (title=="Projects") { %>
+              <a class="nav-link active" href="/projects"><i class="fa-regular fa-wrench"></i></i>Projects</a>
+            <% } else { %>
+              <a class="nav-link" href="/projects"><i class="fa-regular fa-wrench"></i></i>Projects</a>
+            <% } %> 
+          </li>
+          <li class="nav-item">
+            <% if (title=="Services") { %>
+              <a class="nav-link active" href="/services"><i class="fa-regular fa-gears"></i></i>Services</a>
+            <% } else { %>
+              <a class="nav-link" href="/services"><i class="fa-regular fa-gears"></i></i>Services</a>
+            <% } %> 
+          </li>
+          <li class="nav-item">
+            <% if (title=="Contact") { %>
+              <a class="nav-link active" href="/contact"><i class="fa-regular fa-address-card"></i>Contact</a>
+            <% } else { %>
+              <a class="nav-link" href="/contact"><i class="fa-regular fa-address-card"></i>Contact</a>
+            <% } %> 
+          </li>
+        </ul>
+      </div>
+    </nav>
