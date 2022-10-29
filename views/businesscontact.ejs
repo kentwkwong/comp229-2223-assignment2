@@ -1,0 +1,75 @@
+<%- include('./partials/header.ejs') %>
+
+<%- include('./partials/main_nav.ejs') %>
+
+  <!-- Main Content -->
+  <main class="container w-100 p-3">
+    <h1><%= title %></h1>
+    <label for="myfile">Select a file:</label>
+    <input type="file" id="myfile" name="myfile">
+    <button type="button" id="btnSubmit" class="btn text-bg-info">Submit</button>
+    
+    <textarea id="txt"></textarea>
+    <i class="bi bi-1-square"></i>
+            <table class="table table-bordered table-striped table-hover w-auto">
+                <!-- Header Row -->
+                <thead>
+                    <tr>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Phone</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center"></th>
+                        <th class="text-center"></th>
+                    </tr>
+                </thead>
+                <!-- Repeatable Template Row -->
+            <% for(let counter = 0; counter < ContactList.length; counter++) { %>
+                <tr>
+                    <td class="text-center"><%= ContactList[counter].name %></td>
+                    <td class="text-center"><%= ContactList[counter].phone %></td>
+                    <td class="text-center"><%= ContactList[counter].email %></td>
+                    <td class="text-center"><a class="nav-link" href="/businesscontact/"><i class="fa-regular fa-pen-to-square"></i></a></td>
+                    <td class="text-center"><a class="nav-link" href="/businesscontact/"><i class="fa-solid fa-trash-can"></i></a></td>
+                </tr>
+            <% } %>
+            </table>
+
+  </main>
+
+<%- include('./partials/bottom_nav.ejs') %>
+
+<%- include('./partials/footer.ejs') %>
+
+
+
+  <!-- Customized javascript to capture the name input -->
+  <script>
+
+        $("#btnSubmit").click(function(){
+            alert($('#txt').val());
+            var element = document.getElementById("myfile");
+            var file = element.files[0];
+
+            var loFormData = new FormData();
+            loFormData.append("filename", file.name);
+            loFormData.append("file", file);
+
+            var loAjaxRequest = $.ajax({
+            cache: false,
+            type: 'POST',
+            url: "https://localhost:7180/api/File/UploadImage/4081aca4-b9b8-4169-4b5c-08dab1200456",
+            contentType: false,
+            processData: false,
+            data: {
+                Alt: "This is alt test",
+                Image: loFormData
+            }
+            });
+
+            loAjaxRequest.done(function (xhr, textStatus) {
+                alert(textStatus);
+            });
+        });
+
+
+  </script>
