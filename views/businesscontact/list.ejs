@@ -1,0 +1,56 @@
+<!--
+    Filename: businesscontact/list.ejs
+    Student name: Wing Keung Wong
+    Student ID: 301242732
+    Create Date: 29-Oct-2022
+-->
+
+<%- include('../partials/header.ejs') %>
+
+<%- include('../partials/main_nav.ejs') %>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <h1><%= title %></h1>
+            <a href="/businesscontact/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle">Add a Contact</i>
+            </a>
+        </div>
+
+
+        <div class=" d-flex p-3" style="width: 1000px;">
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row -->
+                <tr>
+                    <th class="bg-info text-center col-2">Name</th>
+                    <th class="bg-info text-center col-2">Phone</th>
+                    <th class="bg-info text-center col-4">Email</th>
+                    <th class="bg-info text-center col-2"></th>
+                    <th class="bg-info text-center col-2"></th>
+                </tr>
+                <!-- Repeatable Template Row -->
+               <% for(let counter = 0; counter < BusinessContactList.length; counter++) { %>
+                    <tr>
+                        <td class="text-center col-2"><%= BusinessContactList[counter].name %></td>
+                        <td class="text-center col-2"><%= BusinessContactList[counter].phone %></td>
+                        <td class="text-center col-4"><%= BusinessContactList[counter].email %></td>
+                        <td class="text-center col-2">
+                            <a href="/businesscontact/edit/<%= BusinessContactList[counter]._id %>" class="btn btn-primary btn-sm">
+                                <i class="fas fa-pencil-alt"></i>Edit</a>
+                        </td>
+                        <td class="text-center col-2">
+                            <a href="/businesscontact/delete/<%= BusinessContactList[counter]._id %>" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i>Delete</a>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+
+<%- include('../partials/bottom_nav.ejs') %>
+
+<%- include('../partials/footer.ejs') %>

@@ -9,7 +9,7 @@
 <body>
     <!-- Main Menu -->
     <nav class="navbar navbar-expand-lg navbar-light text-bg-info">
-      <a class="navbar-brand" href="/"><img src='/Assets/images/kw_logo.png' />Comp229 Assignment 1</a>
+      <a class="navbar-brand" href="/"><img src='/Assets/images/kw_logo.png' />Comp229 Assignment 2</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,34 +24,7 @@
               <a class="nav-link" href="/home"><i class="fa-regular fa-house"></i>Home </a>
             <% } %> 
           </li>
-          <li class="nav-item">
-            <% if (title=="About") { %>
-              <a class="nav-link active" href="/about"><i class="fa-regular fa-circle-info"></i></i>About</a>
-            <% } else { %>
-              <a class="nav-link" href="/about"><i class="fa-regular fa-circle-info"></i></i>About</a>
-            <% } %> 
-          </li>
-          <li class="nav-item">
-            <% if (title=="Projects") { %>
-              <a class="nav-link active" href="/projects"><i class="fa-regular fa-wrench"></i></i>Projects</a>
-            <% } else { %>
-              <a class="nav-link" href="/projects"><i class="fa-regular fa-wrench"></i></i>Projects</a>
-            <% } %> 
-          </li>
-          <li class="nav-item">
-            <% if (title=="Services") { %>
-              <a class="nav-link active" href="/services"><i class="fa-regular fa-gears"></i></i>Services</a>
-            <% } else { %>
-              <a class="nav-link" href="/services"><i class="fa-regular fa-gears"></i></i>Services</a>
-            <% } %> 
-          </li>
-          <li class="nav-item">
-            <% if (title=="Contact") { %>
-              <a class="nav-link active" href="/contact"><i class="fa-regular fa-address-card"></i>Contact</a>
-            <% } else { %>
-              <a class="nav-link" href="/contact"><i class="fa-regular fa-address-card"></i>Contact</a>
-            <% } %> 
-          </li>
+          
           <li class="nav-item">
             <% if (title=="Books") { %>
               <a class="nav-link active" href="/book-list/"><i class="fa-solid fa-book"></i></i>Book</a>
@@ -69,6 +42,39 @@
           
 
           <% if(typeof displayName == 'string' && displayName) { %>
+            <li class="nav-item">
+              <% if (title=="About") { %>
+                <a class="nav-link active" href="/about"><i class="fa-regular fa-circle-info"></i></i>About</a>
+              <% } else { %>
+                <a class="nav-link" href="/about"><i class="fa-regular fa-circle-info"></i></i>About</a>
+              <% } %> 
+            </li>
+            <li class="nav-item">
+              <% if (title=="Projects") { %>
+                <a class="nav-link active" href="/projects"><i class="fa-regular fa-wrench"></i></i>Projects</a>
+              <% } else { %>
+                <a class="nav-link" href="/projects"><i class="fa-regular fa-wrench"></i></i>Projects</a>
+              <% } %> 
+            </li>
+            <li class="nav-item">
+              <% if (title=="Services") { %>
+                <a class="nav-link active" href="/services"><i class="fa-regular fa-gears"></i></i>Services</a>
+              <% } else { %>
+                <a class="nav-link" href="/services"><i class="fa-regular fa-gears"></i></i>Services</a>
+              <% } %> 
+            </li>
+            <li class="nav-item">
+              <% if (title=="Contact") { %>
+                <a class="nav-link active" href="/contact"><i class="fa-regular fa-address-card"></i>Contact</a>
+              <% } else { %>
+                <a class="nav-link" href="/contact"><i class="fa-regular fa-address-card"></i>Contact</a>
+              <% } %> 
+            </li>
+
+
+
+
+
             <li class="navbar-text"><i class="fas fa-sm fa-user"></i>Welcome, <%= displayName %></li>
             <li class="nav-item"><a href="/logout" class="nav-link">
               <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>

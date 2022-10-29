@@ -2,7 +2,7 @@
     Filename: index.ejs
     Student name: Wing Keung Wong
     Student ID: 301242732
-    Create Date: 7-Oct-2022
+    Create Date: 29-Oct-2022
 -->
 
 
@@ -23,22 +23,18 @@
 
 
     <!-- Form will be submitted to thankyou.ejs page -->
-    <form method="get" action="./login" id="myForm">
-      <div class="row mb-3">
-          <label for="inputName" class="col-sm-2 col-form-label">Username</label>
-          <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputUsername">
-          </div>
-      </div>
-      <div class="row mb-3">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Password</label>
-          <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword">
-          </div>
-      </div>
-      <button type="button" id="btnSubmit" class="btn text-bg-info">Submit</button>
-    </form>
+    <% if(typeof displayName == 'string' && displayName) { %>
+      <li class="navbar-text"><i class="fas fa-sm fa-user"></i>Welcome, <%= displayName %></li>
+      <li class="nav-item"><a href="/logout" class="nav-link">
+        <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+    <% } else { %>
+      <li class="nav-item"><a href="/login" class="nav-link">
+        <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+
+    <% } %>
   </div>
+
+  <% if(typeof displayName == 'string' && displayName) { %>
     <div class="container text-center border">
       <div class="row">
         <div class="col-12 text-bg-info">
@@ -64,7 +60,7 @@
         </div>
       </div>
     </div>
-      
+  <% } %> 
 
   </main>
 
